@@ -13,6 +13,7 @@ unicornButton.addEventListener('click', getAllUnicorns);
 
 // GET CATS
 function getAllCats() {
+  console.log('Test');
   fetch('http://localhost:3000/cats')
     .then((r) => r.json())
     .then(appendCats)
@@ -21,7 +22,8 @@ function getAllCats() {
 
 function appendCats(data) {
   catList.innerHTML = '';
-  data.cats.forEach(appendCat);
+  console.log(data);
+  data.animals.forEach(appendCat);
 }
 
 function appendCat(cat) {
@@ -39,8 +41,9 @@ function getAllDogs() {
 }
 
 function appendDogs(data) {
+  console.log(data);
   dogList.innerHTML = '';
-  data.dogs.forEach(appendDogs);
+  data.animals.forEach(appendDog);
 }
 
 function appendDog(dog) {
@@ -58,8 +61,9 @@ function getAllUnicorns() {
 }
 
 function appendUnicorns(data) {
+  console.log(data);
   unicornList.innerHTML = '';
-  data.unicorns.forEach(appendUnicorn);
+  data.animals.forEach(appendUnicorn);
 }
 
 function appendUnicorn(unicorn) {
